@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="X-UA-Compatible" content="ie=7">
+    <meta name="description" content="Projeto de página unica com uma SideBar">
+    <meta name="author" content="Brian Vigo de Oliveira">
+    <meta name="robots" content="index, index">
+    <meta name="keywords" content="Box, c ">
+    <title>Box</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Box Model</h1>
+    <div></div>
+
+    <input id="check" type="checkbox">
+    <label class="regras" for="check">Você pode pode arredondar a caixa e colocar cor na mesma, entretanto, poderá fazer
+        somente um por vez.<br>
+        <strong>Arredondamento:</strong> Pode ser feito da numeração de 1 a 100 com "px" no final. <br>
+        <strong>Cores:</strong> Pode adicionar cores usando a segunda caixa e escrevendo os nomes em inglês na primeira
+        (Também da para escrever valores Hexadecimais, RGB e HLS). <br>
+        Clique neste texto após entender as regras.
+    </label>
+
+    <label for="check" class="voltar"> Clique aqui para voltar as regras</label>
+    
+    <input id="input" type="text">
+    <input id="color" type="color">
+</body>
+<script>
+    let box = document.querySelector("div"),
+        input = document.querySelector("#input"),
+        color = document.querySelector("#color");
+
+    input.addEventListener("input", () => {
+        box.style.borderRadius = input.value;
+        box.style.background = input.value;
+    });
+
+    color.addEventListener("input", () => {
+        box.style.background = color.value;
+        color.style.background = color.value;
+    });
+
+</script>
+
+</html>
